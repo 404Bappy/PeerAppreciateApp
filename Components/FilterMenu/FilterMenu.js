@@ -10,7 +10,7 @@ import { View } from "react-native";
 import { Text } from "react-native-elements";
 
 export const FilterMenu = () => (
-  <View style={{ backgroundColor: "#5456", overflow:'visible' }}>
+  <View style={{ backgroundColor: "#5456", overflow: "visible" }}>
     <Text>Hello world!</Text>
     <Menu>
       <MenuTrigger text="Select action" />
