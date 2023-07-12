@@ -1,4 +1,3 @@
-// your entry point
 import { MenuProvider } from "react-native-popup-menu";
 import {
   Menu,
