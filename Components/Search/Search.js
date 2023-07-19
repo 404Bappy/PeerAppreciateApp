@@ -26,12 +26,22 @@ const Search = () => {
           onSubmitEditing={""}
         />
       </View>
-      <TouchableOpacity onPress={handleMenuOpen}>
-        <View style={{ marginRight: 10, marginTop: 25 }}>
-          <Icon name="tune" type="MaterialCommunityIcons" />
+      <View
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: 6,
+          alignItems: "flex-start",
+        }}
+      >
+        <View style={{ marginRight: 10, marginTop: 21 }}>
+          <TouchableOpacity onPress={handleMenuOpen}>
+            <Icon name="tune" type="MaterialCommunityIcons" />
+          </TouchableOpacity>
         </View>
-      </TouchableOpacity>
-      {isMenuOpen && <FilterMenu/>}
+
+        {isMenuOpen && <FilterMenu />}
+      </View>
     </View>
   );
 };
