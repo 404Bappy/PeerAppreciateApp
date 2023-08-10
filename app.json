@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "PeerAppreciateApp",
+    "slug": "PeerAppreciateApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "PeerAppreciateApp"
+}
