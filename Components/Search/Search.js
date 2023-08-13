@@ -1,14 +1,7 @@
-import React, { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
 
-const Search = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
-
-  const handleSearch = () => {
-    onSearch(query);
-  };
-
+const Search = () => {
   return (
     <View
       style={{
@@ -22,9 +15,9 @@ const Search = ({ onSearch }) => {
         <TextInput
           style={styles.input}
           placeholder="Search Peers"
-          value={query}
-          onChangeText={setQuery}
-          onSubmitEditing={handleSearch}
+          value={0}
+          onChangeText={""}
+          onSubmitEditing={''}
         />
       </View>
       <TouchableOpacity>
