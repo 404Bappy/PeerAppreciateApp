@@ -1,7 +1,13 @@
+import { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
+import { FilterMenu } from "../FilterMenu/FilterMenu";
 
 const Search = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState();
+  const handleMenuOpen = () => {
+    setIsMenuOpen(true);
+  };
   return (
     <View
       style={{
@@ -17,14 +23,15 @@ const Search = () => {
           placeholder="Search Peers"
           value={0}
           onChangeText={""}
-          onSubmitEditing={''}
+          onSubmitEditing={""}
         />
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleMenuOpen}>
         <View style={{ marginRight: 10, marginTop: 25 }}>
           <Icon name="tune" type="MaterialCommunityIcons" />
         </View>
       </TouchableOpacity>
+      {isMenuOpen && <FilterMenu/>}
     </View>
   );
 };
