@@ -34,7 +34,7 @@ const Search = () => {
           alignItems: "flex-start",
         }}
       >
-        <View style={{ marginRight: 10, marginTop: 21 }}>
+        <View style={{ marginRight: 10, marginTop: 15 }}>
           <TouchableOpacity onPress={handleMenuOpen}>
             <Icon name="tune" type="MaterialCommunityIcons" />
           </TouchableOpacity>
