@@ -31,10 +31,11 @@ const Search = () => {
           display: "flex",
           flexDirection: "column",
           padding: 6,
-          alignItems: "flex-start",
+          alignItems: "flex-end",
+          gap: 10,
         }}
       >
-        <View style={{ marginRight: 10, marginTop: 15 }}>
+        <View style={{ marginRight: 10, marginTop: 15, overflow: "hidden" }}>
           <TouchableOpacity onPress={handleMenuOpen}>
             <Icon name="tune" type="MaterialCommunityIcons" />
           </TouchableOpacity>

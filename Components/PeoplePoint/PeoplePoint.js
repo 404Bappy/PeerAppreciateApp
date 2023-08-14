@@ -6,10 +6,15 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import Divider from "../../Common/Devider/Devider";
+import { FilterMenu } from "../FilterMenu/FilterMenu";
 
 export default function PeoplePoint() {
+  const [touch, setTouch] = useState();
+  const handleMenuOpen = () => {
+    setTouch(true);
+  };
   return (
     <View
       style={{
@@ -19,27 +24,34 @@ export default function PeoplePoint() {
         backgroundColor: "#fff",
       }}
     >
-      <TouchableOpacity>
-        <View style={styles.approversContainer}>
-          <View style={styles.employee}>
-            <View style={styles.imageContainer}>
-              <Image
-                style={styles.pic}
-                source={require("../../Assets/b.jpg")}
-              />
+      <View>
+        <TouchableOpacity
+          onPress={() => {
+            handleMenuOpen;
+          }}
+        >
+          <View style={styles.approversContainer}>
+            <View style={styles.employee}>
+              <View style={styles.imageContainer}>
+                <Image
+                  style={styles.pic}
+                  source={require("../../Assets/b.jpg")}
+                />
+              </View>
+              <View style={styles.txtContainer}>
+                <Text style={{ fontWeight: "500" }}>
+                  Md. Mahadi Hasan Mridul{" "}
+                </Text>
+                <Text style={{ color: "gray" }}>Line Manager</Text>
+              </View>
             </View>
-            <View style={styles.txtContainer}>
-              <Text style={{ fontWeight: "500" }}>
-                Md. Mahadi Hasan Mridul{" "}
-              </Text>
-              <Text style={{ color: "gray" }}>Line Manager</Text>
+            <View>
+              <Divider />
             </View>
           </View>
-          <View>
-            <Divider />
-          </View>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+        {touch && <FilterMenu />}
+      </View>
 
       <TouchableOpacity>
         <View style={styles.approversContainer}>

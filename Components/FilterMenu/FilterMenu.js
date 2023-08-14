@@ -1,49 +1,93 @@
-// import { MenuProvider } from "react-native-popup-menu";
-// import {
-//   Menu,
-//   MenuOptions,
-//   MenuOption,
-//   MenuTrigger,
-// } from "react-native-popup-menu";
-// import { View } from "react-native";
-// import { Text } from "react-native-elements";
+import { MenuProvider } from "react-native-popup-menu";
+import {
+  Menu,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from "react-native-popup-menu";
+import { View } from "react-native";
+import { Text } from "react-native-elements";
 
-// export const FilterMenu = () => (
-//   <View style={{ backgroundColor: "#5456" }}>
-//     <Text>Hello world!</Text>
-//     <Menu>
-//       <MenuTrigger text="Select action" />
-//       <MenuOptions>
-//         <MenuOption onSelect={() => alert(`Save`)} text="HI There" />
-//         <MenuOption onSelect={() => alert(`Delete`)}>
-//           <Text style={{ color: "red" }}>Delete</Text>
-//         </MenuOption>
-//         <MenuOption
-//           onSelect={() => alert(`Not called`)}
-//           disabled={true}
-//           text="Disabled"
-//         />
-//       </MenuOptions>
-//     </Menu>
-//   </View>
-// );
+import Icon from "react-native-vector-icons/AntDesign";
 
-import { TouchableOpacity, View, Text } from "react-native";
-import React, { useState } from "react";
-
-export default function FilterMenu() {
-  const [visible, setVisible] = useState(false);
-  return (
-    <>
-      <TouchableOpacity>
-        <Icon name="tune" type="MaterialCommunityIcons" />
-      </TouchableOpacity>
-      <Modal trans={visible}>
-        <SafeAreaView
-          style={{ flex: 1, backgroundColor: "red" }}
-          
-        ></SafeAreaView>
-      </Modal>
-    </>
-  );
-}
+export const FilterMenu = () => (
+  <View
+    style={{
+      backgroundColor: "#fff",
+      height: 196,
+      width: 200,
+      shadowColor: "gray",
+      shadowOffset: { width: 0, height: 0 },
+      padding: 10,
+      elevation: 10,
+      shadowRadius: 4,
+      overflow: "visible",
+      marginRight: 10,
+    }}
+  >
+    <Menu style={{ overflow: "scroll" }}>
+      <View>
+        <Text style={{ color: "gray", marginBottom: 10 }}>Filter By</Text>
+        <MenuOption
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 16,
+            width: 200,
+            height: 40,
+          }}
+        >
+          <View>
+            <Icon name="user" type="AntDesign" size={24} />
+          </View>
+          <Text style={{ fontWeight: "400", fontSize: 16 }}>Name</Text>
+        </MenuOption>
+        <MenuOption
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 16,
+            gap: 16,
+            width: 200,
+            height: 40,
+          }}
+        >
+          <View>
+            <Icon name="clockcircleo" type="AntDesign" size={24} />
+          </View>
+          <Text style={{ fontWeight: "400", fontSize: 16 }}>Last Seen</Text>
+        </MenuOption>
+        <MenuOption
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 16,
+            gap: 16,
+            width: 200,
+            height: 40,
+          }}
+        >
+          <View>
+            <Icon name="staro" type="AntDesign" size={24} />
+          </View>
+          <Text style={{ fontWeight: "400", fontSize: 16 }}>Low Point</Text>
+        </MenuOption>
+        <MenuOption
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: 16,
+            gap: 16,
+            width: 200,
+            height: 40,
+          }}
+        >
+          <View>
+            <Icon name="staro" type="AntDesign" size={24} />
+          </View>
+          <Text style={{ fontWeight: "400", fontSize: 16 }}>High Point</Text>
+        </MenuOption>
+      </View>
+    </Menu>
+  </View>
+);
