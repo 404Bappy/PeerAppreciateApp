@@ -1,14 +1,9 @@
-
+import { MenuProvider } from "react-native-popup-menu";
 import {
   Menu,
   MenuOptions,
-  showMenu,
   MenuOption,
-  hideMenu,
   MenuTrigger,
-  MenuItem,
-  visible,
-  MenuDivider,
 } from "react-native-popup-menu";
 import { View } from "react-native";
 import { Text } from "react-native-elements";
@@ -16,16 +11,19 @@ import { Text } from "react-native-elements";
 export const FilterMenu = () => (
   <View style={{ backgroundColor: "#5456" }}>
     <Text>Hello world!</Text>
-    <Menu
-      visible={visible}
-      anchor={<Text onPress={showMenu}>Show menu</Text>}
-      onRequestClose={hideMenu}
-    >
-      <MenuItem onPress={hideMenu}>Menu item 1</MenuItem>
-      <MenuItem onPress={hideMenu}>Menu item 2</MenuItem>
-      <MenuItem disabled>Disabled item</MenuItem>
-     
-      <MenuItem onPress={hideMenu}>Menu item 4</MenuItem>
+    <Menu>
+      <MenuTrigger text="Select action" />
+      <MenuOptions>
+        <MenuOption onSelect={() => alert(`Save`)} text="HI There" />
+        <MenuOption onSelect={() => alert(`Delete`)}>
+          <Text style={{ color: "red" }}>Delete</Text>
+        </MenuOption>
+        <MenuOption
+          onSelect={() => alert(`Not called`)}
+          disabled={true}
+          text="Disabled"
+        />
+      </MenuOptions>
     </Menu>
   </View>
 );
