@@ -21,14 +21,12 @@ export const FilterMenu = () => (
       padding: 10,
       elevation: 10,
       shadowRadius: 4,
-      overflow: "hidden",
+      overflow: "visible",
       marginRight: 10,
     }}
   >
     <Menu style={{ overflow: "scroll" }}>
-      <MenuTrigger>
-        <Text>Show Menu</Text>
-      </MenuTrigger>
+    
       <View>
         <Text style={{ color: "gray", marginBottom: 10 }}>Filter By</Text>
         <MenuOption
@@ -93,4 +91,4 @@ export const FilterMenu = () => (
       </View>
     </Menu>
   </View>
-)
+);

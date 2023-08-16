@@ -57,10 +57,18 @@ const Search = () => {
       <Modal visible={isMenuOpen} transparent={true}>
         {/* Use TouchableWithoutFeedback to handle overlay touch */}
         <TouchableWithoutFeedback onPress={handleCloseMenu}>
-          <View />
+          <View style={styles.overlay} />
         </TouchableWithoutFeedback>
         <FilterMenu onClose={handleCloseMenu} />
       </Modal>
+
+      {/* <Modal
+        visible={isMenuOpen}
+        transparent={true}
+        // animationType="slide" // You can adjust the animation type as needed
+      >
+        <FilterMenu onClose={handleCloseMenu} />
+      </Modal> */}
     </View>
   );
 };
