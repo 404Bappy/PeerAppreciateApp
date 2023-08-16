@@ -4,6 +4,8 @@ import {
   Image,
   StyleSheet,
   ScrollView,
+  Modal,
+  TouchableWithoutFeedback,
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
@@ -11,9 +13,12 @@ import Divider from "../../Common/Devider/Devider";
 import { FilterMenu } from "../FilterMenu/FilterMenu";
 
 export default function PeoplePoint() {
-  const [touch, setTouch] = useState(false);
-  const peopleHandle = () => {
-    setTouch(!touch);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuOpen = () => {
+    setIsMenuOpen(true);
+  };
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
   };
   return (
     <View
@@ -27,7 +32,7 @@ export default function PeoplePoint() {
       <View>
         <TouchableOpacity
           onPress={() => {
-            peopleHandle();
+            handleMenuOpen();
           }}
         >
           <View style={styles.approversContainer}>
@@ -50,7 +55,15 @@ export default function PeoplePoint() {
             </View>
           </View>
         </TouchableOpacity>
-        {touch && <FilterMenu />}
+        {isMenuOpen && <FilterMenu onClose={handleCloseMenu} />}
+        <Modal visible={isMenuOpen} transparent={true}>
+          <TouchableWithoutFeedback onPress={handleCloseMenu}>
+            <View style={{ flex: 1 }}>
+              {/* You can add any other content here */}
+              <FilterMenu onClose={handleCloseMenu} />
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
       </View>
 
       <TouchableOpacity>
