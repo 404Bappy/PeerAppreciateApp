@@ -57,7 +57,7 @@ const Search = () => {
       <Modal visible={isMenuOpen} transparent={true}>
         {/* Use TouchableWithoutFeedback to handle overlay touch */}
         <TouchableWithoutFeedback onPress={handleCloseMenu}>
-          <View  />
+          <View />
         </TouchableWithoutFeedback>
         <FilterMenu onClose={handleCloseMenu} />
       </Modal>

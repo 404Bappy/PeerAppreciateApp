@@ -21,7 +21,7 @@ export const FilterMenu = () => (
       padding: 10,
       elevation: 10,
       shadowRadius: 4,
-      overflow: "visible",
+      overflow: "hidden",
       marginRight: 10,
     }}
   >
@@ -93,4 +93,4 @@ export const FilterMenu = () => (
       </View>
     </Menu>
   </View>
-);
+)
