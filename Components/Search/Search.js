@@ -1,12 +1,22 @@
-import { useState } from "react";
-import { View, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { Icon } from "react-native-elements";
 import { FilterMenu } from "../FilterMenu/FilterMenu";
 
 const Search = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleMenuOpen = () => {
     setIsMenuOpen(true);
+  };
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
   };
   return (
     <View
@@ -36,13 +46,21 @@ const Search = () => {
         }}
       >
         <View style={{ marginRight: 10, marginTop: 15, overflow: "hidden" }}>
-          <TouchableOpacity onPress={handleMenuOpen}>
+          <TouchableOpacity style={styles.overlay} onPress={handleMenuOpen}>
             <Icon name="tune" type="MaterialCommunityIcons" />
           </TouchableOpacity>
         </View>
 
-        {isMenuOpen && <FilterMenu />}
+        {/* {isMenuOpen && <FilterMenu onClose={() => setIsMenuOpen(false)} />} */}
       </View>
+
+      <Modal visible={isMenuOpen} transparent={true}>
+        {/* Use TouchableWithoutFeedback to handle overlay touch */}
+        <TouchableWithoutFeedback onPress={handleCloseMenu}>
+          <View  />
+        </TouchableWithoutFeedback>
+        <FilterMenu onClose={handleCloseMenu} />
+      </Modal>
     </View>
   );
 };

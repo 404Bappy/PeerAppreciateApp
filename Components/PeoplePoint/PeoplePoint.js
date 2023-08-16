@@ -11,9 +11,9 @@ import Divider from "../../Common/Devider/Devider";
 import { FilterMenu } from "../FilterMenu/FilterMenu";
 
 export default function PeoplePoint() {
-  const [touch, setTouch] = useState();
+  const [touch, setTouch] = useState(false);
   const peopleHandle = () => {
-    setTouch(true);
+    setTouch(!touch);
   };
   return (
     <View
