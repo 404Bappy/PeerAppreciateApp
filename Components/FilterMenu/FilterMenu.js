@@ -23,6 +23,9 @@ export const FilterMenu = () => (
       shadowRadius: 4,
       overflow: "visible",
       marginRight: 10,
+      marginLeft:180,
+      borderRadius:5,
+      marginTop:170
     }}
   >
     <Menu style={{ overflow: "scroll" }}>
